@@ -1,7 +1,7 @@
 import { SearchOutlined } from "@ant-design/icons";
 import React from "react";
 
-function Header() {
+function Header({ data, status }) {
   return (
     <div>
       <div className="md:flex items-center justify-between mb-10 md:mb-20">
@@ -22,9 +22,18 @@ function Header() {
           <fieldset className="border border-solid border-gray-300 px-3 mx-2  rounded">
             <legend className="px-2 text-xs md:text-left">Category</legend>
             <select defaultValue className="outline-none">
-              <option defaultValue>Default</option>
+              {/* <option defaultValue>Default</option>
               <option value="All">All</option>
-              <option value="Agriculture">Agriculture</option>
+              <option value="Agriculture">Agriculture</option> */}
+              {status == "success" ? (
+                data[0].category?.map((item, i) => (
+                  <option value={item} key={i}>
+                    {item}
+                  </option>
+                ))
+              ) : (
+                <option defaultValue>Default</option>
+              )}
             </select>
           </fieldset>
           <fieldset className="border border-solid border-gray-300 px-3 mx-2  rounded">

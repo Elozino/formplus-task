@@ -1,7 +1,8 @@
 import React from "react";
 
 function TemplateCard({ data }) {
-  console.log(data);
+  // console.log(data);
+  
 
   return (
     <div className=" shadow-lg mb-14 rounded relative h-full">
