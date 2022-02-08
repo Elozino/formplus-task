@@ -22,9 +22,7 @@ function Header({ data, status }) {
           <fieldset className="border border-solid border-gray-300 px-3 mx-2  rounded">
             <legend className="px-2 text-xs md:text-left">Category</legend>
             <select defaultValue className="outline-none">
-              {/* <option defaultValue>Default</option>
               <option value="All">All</option>
-              <option value="Agriculture">Agriculture</option> */}
               {status == "success" ? (
                 data[0].category?.map((item, i) => (
                   <option value={item} key={i}>
